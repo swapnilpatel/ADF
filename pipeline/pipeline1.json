@@ -96,7 +96,10 @@
 				"typeProperties": {
 					"dataflow": {
 						"referenceName": "FirstDF",
-						"type": "DataFlowReference"
+						"type": "DataFlowReference",
+						"parameters": {
+							"parameter1": "\"Hello\""
+						}
 					},
 					"compute": {
 						"coreCount": 8,
