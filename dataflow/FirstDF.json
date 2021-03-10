@@ -13,8 +13,12 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
-			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: true,\n\tignoreNoFilesFound: false,\n\tlimit: 10,\n\tformat: 'excel',\n\tfileSystem: 'adftarget',\n\tfileName: 'adftest.xlsx',\n\tsheetName: 'Sheet1',\n\tfirstRowAsHeader: true) ~> source1"
+			"transformations": [
+				{
+					"name": "SurrogateKey1"
+				}
+			],
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: true,\n\tignoreNoFilesFound: false,\n\tlimit: 10,\n\tformat: 'excel',\n\tfileSystem: 'adftarget',\n\tfileName: 'adftest.xlsx',\n\tsheetName: 'Sheet1',\n\trange: 'A1:B5',\n\tfirstRowAsHeader: true) ~> source1\nsource1 keyGenerate(output({undefined} as long),\n\tstartAt: 1L) ~> SurrogateKey1"
 		}
 	}
 }
