@@ -36,41 +36,25 @@
 							{
 								"source": {
 									"path": "$['firstname']"
+								},
+								"sink": {
+									"path": "firstname"
 								}
 							},
 							{
 								"source": {
 									"path": "$['age']"
+								},
+								"sink": {
+									"path": "age"
 								}
 							},
 							{
 								"source": {
 									"path": "$['id']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_rid']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_self']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_etag']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_attachments']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_ts']"
+								},
+								"sink": {
+									"path": "id"
 								}
 							}
 						],
