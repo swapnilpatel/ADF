@@ -77,7 +77,14 @@
 			{
 				"name": "Data flow1",
 				"type": "ExecuteDataFlow",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Copy data1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -87,6 +94,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"dataflow": {
+						"referenceName": "FirstDF",
+						"type": "DataFlowReference"
+					},
 					"compute": {
 						"coreCount": 8,
 						"computeType": "General"
